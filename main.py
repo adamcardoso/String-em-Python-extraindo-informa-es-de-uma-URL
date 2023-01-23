@@ -1,4 +1,13 @@
+import urllib
+
 url = "bytebank.com/cambio?moedaDestino=dolar&moedaOrigem=real"
+
+# Sanitização da URL
+url = url.strip()  # Remove espaços
+
+# Valida a URL
+if url == "":
+    raise ValueError("A URL está vazia")  # Lança exceção
 
 # Separa base e parâmetros
 indice_interrogacao = url.find('?')
